@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="tailwind.css" rel="stylesheet">
+    <title>Theo Harris - Home</title>
+</head>
+<header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-6 px-6 relative">
+    <a href="#" class="block">
+      <h1>Theo Harris</h1>
+    </a>
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      </button>
+    <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+    :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false">
+      <a href="#" class="text-indigo-600 hover:underline">Home</a>
+      <a href="#" class="text-gray-600 hover:underline">Projects</a>
+      <a href="#" class="text-gray-600 hover:underline">Resume</a>
+      <a href="#" class="text-gray-600 hover:underline">Contact</a>
+    </nav>
+  </header>
+<body>
+
+    <main>
+        <!-- This is where the responsive portrait will go -->
+        <div class="portrait">
+            <img class="portrait__img" src="img/face-1.jpg" alt="Me"/>
+            <img class="portrait__img" src="img/face-2.jpg" alt="Me"/>
+            <img class="portrait__img" src="img/face-3.jpg" alt="Me"/>
+        </div>
+
+        <!-- Short blurb about me -->
+        <h1>Hey there! I'm Theo Harris</h1>
+        <p>I'm a full-stack web developer with a passion for beautiful websites that don't compromise accessibility.</p>
+
+        <!-- Social media link icons -->
+        <ul class="list-none flex">
+            <li><img class="w-20 m-3" src="img/twitter.svg" alt="Twitter"></li>
+            <li><img class="w-20 m-3" src="img/codepen.svg" alt="Codepen"></li>
+            <li><img class="w-20 m-3" src="img/github.svg" alt="Github"></li>
+        </ul>
+    </main>
+    
+</body>
+</html>
