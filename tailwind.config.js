@@ -2,6 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'heading': ['Anonymous Pro', 'monospace'],
+      'subheading': ['Raleway', 'sans-serif'],
+      'body': ['Courier Prime', 'monospace']
+     },
     extend: {
       colors: {
         'robins-egg-blue': {
