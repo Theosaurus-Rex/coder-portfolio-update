@@ -8,95 +8,109 @@
     <link href="dist/style.css" rel="stylesheet">
     <title>Theo Harris - Projects</title>
 </head>
-<header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-6 px-6 relative">
+<header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-coral-400 py-6 px-6 relative">
     <a href="#" class="block">
-      <h1>Theo Harris</h1>
+      <h1 class="font-heading">Theo Harris</h1>
     </a>
-    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class=" rounded-lg inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
       </button>
-    <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+    <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-coral-300 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
     :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false">
       <a href="#" class="text-gray-600 hover:underline">Home</a>
-      <a href="#" class="text-indigo-600 hover:underline">Projects</a>
+      <a href="#" class="text-robins-egg-blue-600 hover:underline">Projects</a>
       <a href="#" class="text-gray-600 hover:underline">Resume</a>
       <a href="#" class="text-gray-600 hover:underline">Contact</a>
     </nav>
   </header>
-<body>
+<body class="bg-cream">
     <div class="flex flex-col justify-center items-center m-10">
-        <h1>Projects</h1>
-        <p>Here are various projects completed both as part of my course at Coder Academy and in my own free time. Links have been provided to both live deployments and source code where available.</p>
+        <h1 class="font-heading text-6xl mt-10 text-gray-800">Projects</h1>
+        <p class="font-subheading text-2xl max-w-4xl mt-10 text-gray-800">Here are various projects completed both as part of my course at Coder Academy and in my own free time. Links have been provided to both live deployments and source code where available.</p>
     </div>
     
     <main id="projects-gallery" class="flex flex-wrap justify-center items-center mt-10">
 
         <!-- OLD PORTFOLIO -->
-        <div class="project-card m-10 max-w-lg">
-            <h2>Portfolio (Dated)</h2>
-            <img class="h-60 rounded-md" src="img/portfolio-old-screenshot.png" alt="Portfolio Preview">
+        <div class="project-card m-10 max-w-lg bg-robins-egg-blue-300 bg-opacity-40 rounded-lg flex flex-col justify-center items-center">
+            <h2 class="font-heading m-3 text-xl">Portfolio (Dated)</h2>
+            <img class="h-60 rounded-md m-5" src="img/portfolio-old-screenshot.png" alt="Portfolio Preview">
             <ul class="tech-stack flex">
                 <li class="w-8"><img src="img/html.svg" alt="HTML"></li>
                 <li class="w-8"><img src="img/css.svg" alt="CSS"></li>
             </ul>
-            <p>This was my first assignment at Coder Academy, created to cement a few weeks worth of lessons on HTML and CSS.</p>
-            <a>Live Demo</a>
-            <a>Source Code</a>
+            <p class="m-3">This was my first assignment at Coder Academy and my previous developer portfolio, created to cement a few weeks worth of lessons on HTML and CSS.</p>
+            <div class="buttons m-3">
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Live Demo</a>
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Source Code</a>
+            </div>
+            
         </div>
 
         <!-- DEEP IMAGE -->
-        <div class="project-card m-10 max-w-lg">
-            <h2>Deep Image Generator</h2>
-            <img class="h-60 rounded-md" src="img/deep-image-screenshot.png" alt="Deep Image Preview">
+        <div class="project-card m-10 max-w-lg bg-robins-egg-blue-300 bg-opacity-40 rounded-lg flex flex-col justify-center items-center">
+            <h2 class="font-heading m-3 text-xl">Deep Image Generator</h2>
+            <img class="h-60 rounded-md m-5" src="img/deep-image-screenshot.png" alt="Deep Image Preview">
             <ul class="tech-stack flex">
                 <li class="w-8"><img src="img/javascript.svg"></li>
                 <li class="w-8"><img src="img/tailwindcss-icon.svg"></li>
             </ul>
-            <p>The Deep Image Generator was created by myself, Kathryn Prestridge and Mimi Romijn as our project for a 48 hour vanilla JavaScript Hackathon done for Coder Academy. It utilises the DeepAI text-to-image API.</p>
-            <a>Live Demo</a>
-            <a>Source Code</a>
+            <p class="m-3">The Deep Image Generator was created by myself, Kathryn Prestridge and Mimi Romijn as our project for a 48 hour vanilla JavaScript Hackathon done for Coder Academy.</p>
+            <div class="buttons m-3">
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Live Demo</a>
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Source Code</a>
+            </div>
+            
         </div>
 
         <!-- RETRO ROCKET -->
-        <div class="project-card m-10 max-w-lg">
-            <h2>Retro Rocket</h2>
-            <img class="h-60 rounded-md" src="img/retro-rocket-screenshot.png" alt="Retro Rocket Preview">
+        <div class="project-card m-10 max-w-lg bg-robins-egg-blue-300 bg-opacity-40 rounded-lg flex flex-col justify-center items-center">
+            <h2 class="font-heading m-3 text-xl">Retro Rocket</h2>
+            <img class="h-60 rounded-md m-5" src="img/retro-rocket-screenshot.png" alt="Retro Rocket Preview">
             <ul class="tech-stack flex">
                 <li class="w-8"><img src="img/ruby.svg"></li>
                 <li class="w-8"><img src="img/ruby-on-rails.svg"></li>
                 <li class="w-8"><img src="img/tailwindcss-icon.svg"></li>
                 <li class="w-8"><img src="img/postgresql.svg"></li>
             </ul>
-            <p>Retro Rocket is a two-sided marketplace application for buying and selling retro and vintage games, toys and collectables. Built for an assessment at Coder Academy.</p>
-            <a>Live Demo</a>
-            <a>Source Code</a>
+            <p class="m-3">Retro Rocket is a two-sided marketplace application for buying and selling retro and vintage games, toys and collectables. Built for an assessment at Coder Academy.</p>
+            <div class="buttons m-3">
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Live Demo</a>
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Source Code</a>
+            </div>
+            
         </div>
 
         <!-- JOOGLE -->
-        <div class="project-card m-10 max-w-lg">
-            <h2>Dad Jokes Seach Engine</h2>
-            <img class="h-60 rounded-md" src="img/joogle-screenshot.png" alt="Joogle Preview">
+        <div class="project-card m-10 max-w-lg bg-robins-egg-blue-300 bg-opacity-40 rounded-lg flex flex-col justify-center items-center">
+            <h2 class="font-heading m-3 text-xl">Dad Jokes Seach Engine</h2>
+            <img class="h-60 rounded-md m-5" src="img/joogle-screenshot.png" alt="Joogle Preview">
             <ul class="tech-stack flex">
                 <li class="w-8"><img src="img/javascript.svg"></li>
                 <li class="w-8"><img src="img/react.svg"></li>
                 <li class="w-8"><img src="img/css.svg"></li>
             </ul>
-            <p>Joogle Search was a side project created to further my understanding of React. It calls on the Dad Jokes API to find jokes that match user input.</p>
-            <a>Live Demo</a>
-            <a>Source Code</a>
+            <p class="m-3">Joogle Search was a side project created to further my understanding of React. It calls on the Dad Jokes API to find jokes that match user input.</p>
+            <div class="buttons m-3">
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Live Demo</a>
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Source Code</a>
+            </div>
+            
         </div>
 
         <!-- TERMINAL TRIVIA -->
-        <div class="project-card m-10 max-w-lg">
-            <h2>Terminal Trivia</h2>
-            <img src="img/terminal-trivia-screenshot.png" alt="Terminal Trivia Preview">
+        <div class="project-card m-10 max-w-lg bg-robins-egg-blue-300 bg-opacity-40 rounded-lg flex flex-col justify-center items-center">
+            <h2 class="font-heading m-3 text-xl">Terminal Trivia</h2>
+            <img class="h-60 rounded-md m-5" src="img/terminal-trivia-screenshot.png" alt="Terminal Trivia Preview">
             <ul class="tech-stack flex">
                 <li class="w-8"><img src="img/ruby.svg"></li>
                 <li class="w-8"><img src="img/ruby-gem.svg"></li>
             </ul>
-            <p>Terminal Trivia is a game created in the style of Trivial Pursuit that runs on the terminal. Programmed using Ruby for a Coder Academy assessment.</p>
-            <a>Live Demo</a>
-            <a>Source Code</a>
+            <p class="m-3">Terminal Trivia is a game created in the style of Trivial Pursuit that runs on the terminal. Programmed using Ruby for a Coder Academy assessment.</p>
+            <div class="buttons m-3">
+                <a class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">Source Code</a>
+            </div>
+            
         </div>
     </main>
 </body>
