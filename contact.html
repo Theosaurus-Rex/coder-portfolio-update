@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="dist/style.css" rel="stylesheet">
+    <title>Theo Harris - Contact</title>
+</head>
+<header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-coral-400 py-6 px-6 relative">
+    <a href="#" class="block">
+      <h1 class="font-heading">Theo Harris</h1>
+    </a>
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class=" rounded-lg inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      </button>
+    <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-coral-300 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+    :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false">
+      <a href="#" class="font-subheading text-gray-600 hover:underline">Home</a>
+      <a href="../projects.html" class="font-subheading text-gray-600 hover:underline">Projects</a>
+      <a href="../img/Tech Resume 2021.pdf" class="font-subheading text-gray-600 hover:underline">Resume</a>
+      <a href="#" class="font-subheading text-robins-egg-blue-600 hover:underline">Contact</a>
+    </nav>
+  </header>
+<body>
+    <main class="flex flex-col items-center bg-cream h-screen">
+    <h1 class="font-heading text-6xl mt-10 text-gray-800">Contact Me</h1>
+    <p class="font-subheading text-2xl max-w-4xl m-10 text-gray-800">Please feel free to reach out to me using the form below and I'll get back to you as soon as possible. I'm looking forward to hearing from you!</p>
+    <form action="mailto:theosaurus13@gmail.com" method="post" enctype="text/plain" class="bg-robins-egg-blue-500 bg-opacity-40 p-10 m-10 rounded-lg">
+        <label class="font-subheading text-gray-800 font-semibold">Name:</label><br>
+        <input type="text" name="name"><br>
+        <label class="font-subheading text-gray-800 font-semibold">E-mail:</label><br>
+        <input type="text" name="mail"><br>
+        <label class="font-subheading text-gray-800 font-semibold">Message:</label><br>
+        <textarea rows="5" cols="50"></textarea><br><br>
+        <div class="flex justify-center">
+            <input type="submit" value="Send" class="font-body bg-coral-400 p-2 rounded-lg hover:bg-coral">
+        </div>
+        
+        </form>
+    </main>
+</body>
+</html>
