@@ -8,6 +8,9 @@ module.exports = {
       'body': ['Courier Prime', 'monospace']
      },
     extend: {
+      backgroundImage: theme => ({
+        'heart': "url('img/pixel-heart.png')",
+       }),
       colors: {
         'robins-egg-blue': {
           DEFAULT: '#00C4CC',
@@ -49,7 +52,8 @@ module.exports = {
           '800': '#E80B00',
           '900': '#B50900'
         },
-      }
+      },
+      
     },
   },
   variants: {
