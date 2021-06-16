@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="dist/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('YOUR_USER_ID');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
     <title>Theo Harris - Contact</title>
 </head>
 <header x-data="{ mobileMenuOpen : false }" class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-coral-400 py-6 px-6 relative">
@@ -25,20 +48,21 @@
   </header>
 <body style="background-image: url('img/web-background.png');">
     <main class="flex flex-col items-center  h-screen">
-    <h1 class="font-heading text-6xl mt-10 text-gray-800">Contact Me</h1>
+    <h1 class="font-heading text-6xl mt-10 text-gray-800 text-center">Contact Me</h1>
     <p class="font-subheading text-2xl max-w-4xl m-10 text-gray-800">Please feel free to reach out to me using the form below and I'll get back to you as soon as possible. I'm looking forward to hearing from you!</p>
-    <form action="mailto:theosaurus13@gmail.com" method="post" enctype="text/plain" class="bg-robins-egg-blue-500 bg-opacity-40 p-10 m-10 rounded-lg">
-        <label class="font-subheading text-gray-800 font-semibold">Name:</label><br>
-        <input type="text" name="name"><br>
-        <label class="font-subheading text-gray-800 font-semibold">E-mail:</label><br>
-        <input type="text" name="mail"><br>
-        <label class="font-subheading text-gray-800 font-semibold">Message:</label><br>
-        <textarea rows="5" cols="50"></textarea><br><br>
-        <div class="flex justify-center">
-            <input type="submit" value="Send" class="font-body bg-coral-400 p-3 rounded-lg hover:bg-coral">
+
+        <form id="contact-form" class="bg-robins-egg-blue-500 bg-opacity-40 p-10 m-10 rounded-lg flex flex-col flex-wrap">
+          <input type="hidden" name="contact_number">
+          <label class="font-subheading text-gray-800 font-semibold">Name</label>
+          <input type="text" name="user_name">
+          <label class="font-subheading text-gray-800 font-semibold">Email</label>
+          <input type="email" name="user_email">
+          <label class="font-subheading text-gray-800 font-semibold">Message</label>
+          <textarea name="message"></textarea>
+          <div class="flex justify-center">
+          <input type="submit" value="Send" class="font-body bg-coral-400 p-3 rounded-lg hover:bg-coral mt-10">
         </div>
-        
-        </form>
+      </form>
     </main>
 </body>
 </html>
